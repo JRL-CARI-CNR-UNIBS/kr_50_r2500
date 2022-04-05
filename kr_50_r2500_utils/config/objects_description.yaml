@@ -1,0 +1,29 @@
+object_geometries:
+
+  # coke_table:
+  #   color: [1,0.8,0,0.8]
+  #   mesh: "package://kr_50_r2500_gazebo/mesh/pin_9_5_mm_smusso.STL"
+  #   offset_quaternion: [ 0, 0, 0, 1 ]
+  #   # scale: [0.001, 0.001, 0.001]
+  #   offset: [0, 0.0, 0.0]
+
+  coke_table_top:
+    color: [1,0.8,0,0.8]
+    box:  [1.6,1.3,0.1]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    # scale: [0.001, 0.001, 0.001]
+    offset: [0.0, 0.0, 1.04]
+
+
+  coke_table_leg:
+    color: [1,0.8,0,0.8]
+    box:  [0.100,0.100,0.990]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    # scale: [0.001, 0.001, 0.001]
+    offset: [0, 0.0, 0.495]
+
+  cylinder:
+    color: [1, 1, 0, 1]
+    box:  [0.080,0.080,0.130]
+    offset_quaternion: [ 0, 0, 0, 1 ]
+    offset: [0, 0, 0.065]

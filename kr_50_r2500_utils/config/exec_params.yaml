@@ -1,0 +1,44 @@
+exec_params:
+# This structure is used by the nodes
+  trajectory_tracking:
+    tr_tr_coke:
+      location_name: "coke"
+      to_loc_ctrl_id: "trajectory_tracking"
+      job_exec_name: ""
+      tool_id: "link6"
+      property_exec_id: "trajectory_tracking"
+  cart_move:
+    cart_x:
+      frame_id: "link6"
+      twist_move: [0.05,0.0,0.0,0.0,0.0,0.0]
+      move_time: 5.0
+    cart_y:
+      frame_id: "link6"
+      twist_move: [0.0,0.05,0.0,0.0,0.0,0.0]
+      move_time: 5.0
+    cart_z:
+      frame_id: "link6"
+      twist_move: [0.0,0.0,0.05,0.0,0.0,0.0]
+      move_time: 5.0
+  simple_touch:
+    st_x:
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.005,0.0,0.0,0.0,0.0,0.0]
+      target_wrench: [10,10,10,0,0,0]
+      wrench_toll: [0.1,0.0,0.0,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+    st_y:
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.0,0.05,0.0,0.0,0.0,0.0]
+      target_wrench: [10]
+      wrench_toll: [0.0,0.1,0.0,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]
+    st_z:
+      target_frame: "gripper_base_link"
+      goal_twist_frame: "gripper_base_link"      #"base"
+      goal_twist: [0.0,0.0,0.005,0.0,0.0,0.0]
+      target_wrench: [10]
+      wrench_toll: [0.0,0.0,0.1,0.0,0.0,0.0]
+      wrench_deadband: [0.1,0.1,0.1,0.1,0.1,0.1]

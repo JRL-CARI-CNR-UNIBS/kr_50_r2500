@@ -1,0 +1,7 @@
+scene_objects:
+- {type: "coke_table_leg" , frame: "world", position: [-0.53403, 2.00698, 0.0], quaternion: [0, 0, 0, 1]}
+- {type: "coke_table_leg" , frame: "world", position: [-0.53403, 0.90698, 0.0], quaternion: [0, 0, 0, 1]}
+- {type: "coke_table_leg" , frame: "world", position: [0.86597, 2.00698, 0.0], quaternion: [0, 0, 0, 1]}
+- {type: "coke_table_leg" , frame: "world", position: [0.86597, 0.90698, 0.0], quaternion: [0, 0, 0, 1]}
+- {type: "coke_table_top" , frame: "world", position: [0.16597, 1.45698, 0.0]    , quaternion: [0, 0, 0, 1]}
+- {type: "cylinder"   , frame: "world", position: [0.0, 1.5, 1.09], quaternion: [0, 0, 0, 1]}
