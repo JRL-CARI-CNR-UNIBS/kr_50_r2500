@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find kr_50_r2500_gazebo)/launch/kr_50_r2500_world.launch" />
+  <include file="$(find kr_50_r2500_gazebo)/launch/kr_50_r2500_control.launch" />
+</launch>

@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find kr_50_r2500_gazebo)/config/kr_50_r2500_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/kr_50_r2500" args="joint_state_controller
+                                          robust_inverse_dynamics
+                                          mimic_effort_controller"/>
+                                          <!-- mimic_controller"/> -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	   respawn="false" output="screen">
+    <remap from="/joint_states" to="/kr_50_r2500/joint_states" />
+  </node>
+
+</launch>

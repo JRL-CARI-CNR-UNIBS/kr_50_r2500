@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://coke_can</uri>
+      <pose>0 1.5 1.3 0 0 0</pose>
+    </include>
+    <include>
+      <model name="table">
+        <pose>0 0 0  0 0 0</pose>
+        <static>true</static>
+        <link name="table">
+          <visual name="table">
+            <geometry>
+              <mesh filename="package://kr_50_r2500_gazebo/meshes/table.STL" /> */
+            </geometry>
+          </visual>
+        </link>
+      </model>
+    </include>
+  </world>
+</sdf>

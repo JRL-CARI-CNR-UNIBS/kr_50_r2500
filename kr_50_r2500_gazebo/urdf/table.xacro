@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot  name="table" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link
+    name="world" />
+  <link
+    name="table">
+    <inertial>
+      <origin
+        xyz="-0.080585 0.00067592 0.086754"
+        rpy="0 0 0" />
+      <mass
+        value="30.385" />
+      <inertia
+        ixx="0.38941"
+        ixy="0.0047083"
+        ixz="0.060696"
+        iyy="0.87424"
+        iyz="-0.00029206"
+        izz="1.0819" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/table.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/table.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fixed" type="fixed">
+      <origin
+        xyz="0 1.5 0"
+        rpy="0 0 0" />
+      <parent link="world"/>
+      <child link="table"/>
+  </joint>
+</robot>
