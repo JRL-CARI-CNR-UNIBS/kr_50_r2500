@@ -67,26 +67,44 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        finger_1:
+        closed_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gripper_base:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        finger_2:
+        left_base_rod:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        finger_3:
+        left_crank:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        gripper_base_link:
+        left_external_crank:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        left_phalanx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_rod:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         link1:
           Alpha: 1
           Show Axes: false
@@ -117,7 +135,44 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        open_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_base_rod:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_crank:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_external_crank:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_phalanx:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_rod:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zero_pos_tip:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -163,26 +218,44 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_1:
+          closed_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          gripper_base:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_2:
+          left_base_rod:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_3:
+          left_crank:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          gripper_base_link:
+          left_external_crank:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          left_phalanx:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           link1:
             Alpha: 1
             Show Axes: false
@@ -213,7 +286,44 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          open_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          right_base_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_crank:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_external_crank:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_phalanx:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           world:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          zero_pos_tip:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -267,26 +377,44 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_1:
+          closed_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          gripper_base:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_2:
+          left_base_rod:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          finger_3:
+          left_crank:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          gripper_base_link:
+          left_external_crank:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          left_phalanx:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          left_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           link1:
             Alpha: 1
             Show Axes: false
@@ -317,7 +445,44 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          open_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          right_base_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_crank:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_external_crank:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_phalanx:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_rod:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          right_tip:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           world:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          zero_pos_tip:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -327,36 +492,10 @@ Visualization Manager:
       Value: true
       Velocity_Scaling_Factor: 1
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        a_mount_flange:
-          Value: true
-        base_link:
-          Value: true
-        finger_1:
-          Value: true
-        finger_2:
-          Value: true
-        finger_3:
-          Value: true
-        gripper_base_link:
-          Value: true
-        link1:
-          Value: true
-        link2:
-          Value: true
-        link3:
-          Value: true
-        link4:
-          Value: true
-        link5:
-          Value: true
-        link6:
-          Value: true
-        world:
-          Value: true
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -364,25 +503,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          a_mount_flange:
-            {}
-          base_link:
-            link1:
-              link2:
-                link3:
-                  link4:
-                    link5:
-                      link6:
-                        gripper_base_link:
-                          finger_1:
-                            {}
-                          finger_2:
-                            {}
-                          finger_3:
-                            {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48

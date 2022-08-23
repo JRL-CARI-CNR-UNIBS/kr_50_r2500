@@ -27,6 +27,16 @@ level0_hw:
   - "/relative_move/result"
   - "/relative_move/status"
 
+  ur_trj:
+    action_ns: /scaled_pos_joint_traj_controller/follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
   js_pub:
     type: cnr/control/JointStatePublisher
     controlled_joint: all

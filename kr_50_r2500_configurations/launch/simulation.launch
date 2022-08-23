@@ -20,6 +20,7 @@
  <!-- the controller does not manage the hand, use a joint_state_publisher to handle it -->
 <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
   <param name="/use_gui" value="false"/>
+  <param name="rate" value="500"/>
   <rosparam param="/source_list">[/kr_50_r2500/joint_states]</rosparam>
 </node>
 

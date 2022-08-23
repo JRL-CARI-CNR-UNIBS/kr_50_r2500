@@ -49,12 +49,12 @@ control_configurations:
   components:
   - {hardware_interface: "level1_hw", controller: "simple_touch", runtime_check: false}
 
-- name: cartesian_velocity
+- name: "cartesian_velocity"
   depends: ["watch"]
   components:
   - {hardware_interface: "level0_hw", controller: "cartesian_velocity",  runtime_check: false}
 
-- name: cartesian_position
+- name: "cartesian_position"
   depends: ["watch"]
   components:
   - {hardware_interface: "level0_hw", controller: "cartesian_position",  runtime_check: true}

@@ -15,25 +15,35 @@ kr_50_r2500:
     base_frame: world
     tool_frame: link6
     setpoint_topic_name: "/kr_50_r2500/joint_target"
-    natural_frequency: 20   # natural frequency of the closed loop
+    natural_frequency: 100   # natural frequency of the closed loop
     damping: 1              # relative damping of the closed loop
     robustness_gain: 0.01   # robustness gain
 
-  mimic_effort_controller:
+  gripper_controller:
     type: robot_control/MimicEffortController
-    joint_names: # controlled joints
-    - joint_finger_1
-    - joint_finger_2
-    - joint_finger_3
+    joint_names:
+    - right_finger_joint
 
-    leading_joint: "joint_finger_1"  # leading joint
-
-    # target effort of a generic joint:  offset+multiplier*effort of leading joint
-
-    multiplier: [-1.0, 1.0, 1.0] #  (default 1.0)
-    offset: [0.0, 0.0, 0.0] # (default null)
-
+    leading_joint: "right_finger_joint"
     setpoint_topic_name: "/gripper/joint_target"
+    multiplier: [1.0]
+    offset: [0.0]
+
+  # mimic_effort_controller:
+  #   type: robot_control/MimicEffortController
+  #   joint_names: # controlled joints
+  #   - joint_finger_1
+  #   - joint_finger_2
+  #   - joint_finger_3
+  #
+  #   leading_joint: "joint_finger_1"  # leading joint
+  #
+  #   # target effort of a generic joint:  offset+multiplier*effort of leading joint
+  #
+  #   multiplier: [-1.0, 1.0, 1.0] #  (default 1.0)
+  #   offset: [0.0, 0.0, 0.0] # (default null)
+  #
+  #   setpoint_topic_name: "/gripper/joint_target"
 
   # mimic_controller:
   #   type: robot_control/MimicController

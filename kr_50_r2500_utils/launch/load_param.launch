@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <rosparam command="load" file="$(find kr_50_r2500_utils)/config/collection_name.yaml"/>
-  <rosparam command="load" file="$(find kr_50_r2500_utils)/config/exec_params.yaml"/>
-</launch>

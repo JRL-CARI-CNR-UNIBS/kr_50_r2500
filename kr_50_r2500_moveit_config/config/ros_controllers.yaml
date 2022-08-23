@@ -11,7 +11,6 @@ controller_list:
     - joint5
     - joint6
 
-
 # kr_position_controller:
 #   type: position_controllers/JointTrajectoryController
 #   joints:
@@ -48,28 +47,6 @@ controller_list:
 #       i: 1
 #       i_clamp: 1
 #     joint6:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-# gripper_position_controller:
-#   type: position_controllers/JointTrajectoryController
-#   joints:
-#     - joint_finger_1
-#     - joint_finger_2
-#     - joint_finger_3
-#   gains:
-#     joint_finger_1:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint_finger_2:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint_finger_3:
 #       p: 100
 #       d: 1
 #       i: 1
