@@ -14,6 +14,7 @@
       <child link="gripper_base_link"/>
   </joint> -->
 
+
   <xacro:include filename="$(find parallel_2f_gripper)/urdf/gripper.xacro" />
   <xacro:gripper prefix=""/>
 
@@ -24,6 +25,31 @@
       <parent link="link6"/>
       <child link="gripper_base"/>
   </joint>
+
+  <xacro:property name="floor_size_x" value="6" />
+  <xacro:property name="floor_size_y" value="6" />
+  <xacro:property name="floor_size_z" value="0.5" />
+  <xacro:property name="floor" value="0.4 0.4 0.5 1" />
+
+  <joint name="world_to_floor" type="fixed">
+    <parent link="world"/>
+    <child link="floor"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="floor">
+     <collision>
+       <origin xyz="0 0 ${-0.5001*floor_size_z}" rpy="0 0 0" />
+       <geometry>
+         <box size="${floor_size_x} ${floor_size_y} ${floor_size_z}" />
+       </geometry>
+       <material name="White">
+         <color rgba="1 1 1 0.1"/>
+       </material>
+     </collision>
+  </link>
+
+
 
   <!-- <xacro:include filename="$(find kr_50_r2500_gazebo)/urdf/robotiq_arg2f_85_model.xacro" />
 
