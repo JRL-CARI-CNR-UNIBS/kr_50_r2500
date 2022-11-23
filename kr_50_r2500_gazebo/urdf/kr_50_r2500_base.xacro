@@ -1,5 +1,41 @@
 <?xml version="1.0"?>
 <robot  name="kr_50_r2500" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="joint1_pos_upper_limit" value="2.90597" />    <!--  185° -->
+  <xacro:property name="joint1_pos_lower_limit" value="-2.90597" />   <!-- -185° -->
+  <xacro:property name="joint2_pos_upper_limit" value="0.942478" />   <!--   60° -->
+  <xacro:property name="joint2_pos_lower_limit" value="-2.74889" />   <!-- -175° -->
+  <xacro:property name="joint3_pos_upper_limit" value="2.67035" />    <!--  170° -->
+  <xacro:property name="joint3_pos_lower_limit" value="-1.88496" />   <!-- -120° -->
+  <xacro:property name="joint4_pos_upper_limit" value="2.82743" />    <!--  180° -->
+  <xacro:property name="joint4_pos_lower_limit" value="-2.82743" />   <!-- -180° -->
+  <xacro:property name="joint5_pos_upper_limit" value="1.9635" />     <!--  125° -->
+  <xacro:property name="joint5_pos_lower_limit" value="-1.9635" />    <!-- -125° -->
+  <xacro:property name="joint6_pos_upper_limit" value="5.49779" />    <!--  350° -->
+  <xacro:property name="joint6_pos_lower_limit" value="-5.49779" />   <!-- -350° -->
+
+  <xacro:property name="joint1_vel_limit" value="2.74889" />    <!--  175°/s -->
+  <xacro:property name="joint2_vel_limit" value="2.48186" />    <!--  158°/s -->
+  <xacro:property name="joint3_vel_limit" value="2.74889" />    <!--  175°/s -->
+  <xacro:property name="joint4_vel_limit" value="3.92699" />    <!--  250°/s -->
+  <xacro:property name="joint5_vel_limit" value="3.92699" />    <!--  250°/s -->
+  <xacro:property name="joint6_vel_limit" value="5.65487" />    <!--  360°/s -->
+
+  <!-- Effort limit = V elocity limit * 5 -->
+  <!-- <xacro:property name="joint1_eff_limit" value="13.74445" />
+  <xacro:property name="joint2_eff_limit" value="12.40930" />
+  <xacro:property name="joint3_eff_limit" value="13.74445" />
+  <xacro:property name="joint4_eff_limit" value="19.63495" />
+  <xacro:property name="joint5_eff_limit" value="19.63495" />
+  <xacro:property name="joint6_eff_limit" value="28.27435" /> -->
+
+  <xacro:property name="joint1_eff_limit" value="10000" />
+  <xacro:property name="joint2_eff_limit" value="10000" />
+  <xacro:property name="joint3_eff_limit" value="10000" />
+  <xacro:property name="joint4_eff_limit" value="10000" />
+  <xacro:property name="joint5_eff_limit" value="10000" />
+  <xacro:property name="joint6_eff_limit" value="10000" />
+
   <link
     name="world" />
   <link
@@ -42,7 +78,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="fixed" type="fixed">
+  <joint name="world_to_base_link" type="fixed">
       <origin
         xyz="0 0 0"
         rpy="-1.57079632679 0 0" />
@@ -100,8 +136,8 @@
     <child
       link="link1" />
     <axis
-      xyz="0 0 1" />
-    <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="10000.0" velocity="2.16"/>
+      xyz="0 0 -1" />
+    <limit lower="${joint1_pos_lower_limit}" upper="${joint1_pos_upper_limit}" effort="${joint1_eff_limit}" velocity="${joint1_vel_limit}"/>
   </joint>
   <link
     name="link2">
@@ -148,14 +184,14 @@
     type="revolute">
     <origin
       xyz="0.175 -0.074807 0.405"
-      rpy="0 -0.013745 0" />
+      rpy="0 1.557055  0" />
     <parent
       link="link1" />
     <child
       link="link2" />
     <axis
       xyz="0 1 0" />
-    <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="10000.0" velocity="2.16"/>
+    <limit lower="${joint2_pos_lower_limit}" upper="${joint2_pos_upper_limit}" effort="${joint2_eff_limit}" velocity="${joint2_vel_limit}"/>
   </joint>
   <link
     name="link3">
@@ -202,14 +238,14 @@
     type="revolute">
     <origin
       xyz="0 0 1.29"
-      rpy="0 0.013745 0" />
+      rpy="0 -1.557055 0" />
     <parent
       link="link2" />
     <child
       link="link3" />
     <axis
       xyz="0 1 0" />
-    <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="10000.0" velocity="2.16"/>
+    <limit lower="${joint3_pos_lower_limit}" upper="${joint3_pos_upper_limit}" effort="${joint3_eff_limit}" velocity="${joint3_vel_limit}"/>
   </joint>
   <link
     name="link4">
@@ -263,7 +299,7 @@
       link="link4" />
     <axis
       xyz="1 0 0" />
-    <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="10000.0" velocity="2.16"/>
+    <limit lower="${joint4_pos_lower_limit}" upper="${joint4_pos_upper_limit}" effort="${joint4_eff_limit}" velocity="${joint4_vel_limit}"/>
   </joint>
   <link
     name="link5">
@@ -310,14 +346,14 @@
     type="revolute">
     <origin
       xyz="0.708131634616243 0 0"
-      rpy="0 -0.423626232629137 0" />
+      rpy="0 -0.0 0" />
     <parent
       link="link4" />
     <child
       link="link5" />
     <axis
       xyz="0 1 0" />
-    <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="10000.0" velocity="2.16"/>
+    <limit lower="${joint5_pos_lower_limit}" upper="${joint5_pos_upper_limit}" effort="${joint5_eff_limit}" velocity="${joint5_vel_limit}"/>
   </joint>
   <link
     name="link6">
@@ -371,7 +407,7 @@
       link="link6" />
     <axis
       xyz="1 0 0" />
-    <limit lower="${-4.0 * pi}" upper="${4.0 * pi}" effort="10000.0" velocity="2.16"/>
+    <limit lower="${joint6_pos_lower_limit}" upper="${joint6_pos_upper_limit}" effort="${joint6_eff_limit}" velocity="${joint6_vel_limit}"/>
   </joint>
 
   <transmission name="tran1">
