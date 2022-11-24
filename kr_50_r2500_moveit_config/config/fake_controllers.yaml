@@ -11,7 +11,17 @@ controller_list:
   - name: fake_gripper_controller
     type: $(arg fake_execution_type)
     joints:
-      - right_finger_joint
+      - gripper_visual_fingerA_joint_2
+      - gripper_visual_fingerA_joint_3
+      - gripper_visual_fingerA_joint_4
+      - gripper_visual_fingerB_knuckle
+      - gripper_visual_fingerB_joint_2
+      - gripper_visual_fingerB_joint_3
+      - gripper_visual_fingerB_joint_4
+      - gripper_visual_fingerC_knuckle
+      - gripper_visual_fingerC_joint_2
+      - gripper_visual_fingerC_joint_3
+      - gripper_visual_fingerC_joint_4
 initial:  # Define initial robot poses per group
 #  - group: kr_50_r2500
 #    pose: home

@@ -37,6 +37,7 @@ level0_hw:
       - wrist_1_joint
       - wrist_2_joint
       - wrist_3_joint
+
   js_pub:
     type: cnr/control/JointStatePublisher
     controlled_joint: all

@@ -6,10 +6,8 @@
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 	output="screen" ns="/kr_50_r2500" args="joint_state_controller
-                                          robust_inverse_dynamics
-                                          gripper_controller"/>
-                                          <!-- mimic_effort_controller"/> -->
-                                          <!-- mimic_controller"/> -->
+                                          robust_inverse_dynamics"/>
+                                          <!-- kr_50_position_controllers"/> -->
 
   <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
 	   respawn="false" output="screen">

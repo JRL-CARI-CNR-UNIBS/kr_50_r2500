@@ -2,7 +2,7 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot name="kr_50_r2500" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/kr_50_r2500</robotNamespace>
@@ -23,5 +23,66 @@
           <jointName>gripper_fixed</jointName>
       </plugin>
   </gazebo>
+
+  <gazebo reference="joint1">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
+  <gazebo reference="joint2">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
+  <gazebo reference="joint3">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
+  <gazebo reference="joint4">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
+  <gazebo reference="joint5">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
+  <gazebo reference="joint6">
+      <axis>
+          <dynamics>
+              <spring_stiffness>0.1</spring_stiffness>
+              <spring_reference>0.0</spring_reference>
+              <damping>0.5</damping>
+          </dynamics>
+      </axis>
+  </gazebo>
+
 
 </robot>

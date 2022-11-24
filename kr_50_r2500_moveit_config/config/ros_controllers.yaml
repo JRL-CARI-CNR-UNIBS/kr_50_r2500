@@ -1,53 +1,110 @@
-controller_list:
-  - name: kr_50_r2500
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
+position_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
     - joint1
     - joint2
     - joint3
     - joint4
     - joint5
     - joint6
-
-# kr_position_controller:
-#   type: position_controllers/JointTrajectoryController
-#   joints:
-#     - joint1
-#     - joint2
-#     - joint3
-#     - joint4
-#     - joint5
-#     - joint6
-#   gains:
-#     joint1:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint2:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint3:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint4:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint5:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
-#     joint6:
-#       p: 100
-#       d: 1
-#       i: 1
-#       i_clamp: 1
+  gains:
+    joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+position_controllers:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - gripper_visual_fingerA_joint_2
+    - gripper_visual_fingerA_joint_3
+    - gripper_visual_fingerA_joint_4
+    - gripper_visual_fingerB_knuckle
+    - gripper_visual_fingerB_joint_2
+    - gripper_visual_fingerB_joint_3
+    - gripper_visual_fingerB_joint_4
+    - gripper_visual_fingerC_knuckle
+    - gripper_visual_fingerC_joint_2
+    - gripper_visual_fingerC_joint_3
+    - gripper_visual_fingerC_joint_4
+  gains:
+    gripper_visual_fingerA_joint_2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerA_joint_3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerA_joint_4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerB_knuckle:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerB_joint_2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerB_joint_3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerB_joint_4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerC_knuckle:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerC_joint_2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerC_joint_3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    gripper_visual_fingerC_joint_4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
