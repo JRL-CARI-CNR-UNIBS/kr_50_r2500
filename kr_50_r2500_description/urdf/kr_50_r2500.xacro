@@ -22,16 +22,15 @@
   <xacro:property name="joint5_vel_limit" value="3.92699" />    <!--  250°/s -->
   <xacro:property name="joint6_vel_limit" value="5.65487" />    <!--  360°/s -->
 
-  <xacro:property name="joint1_eff_limit" value="10000" />
-  <xacro:property name="joint2_eff_limit" value="10000" />
-  <xacro:property name="joint3_eff_limit" value="10000" />
-  <xacro:property name="joint4_eff_limit" value="10000" />
-  <xacro:property name="joint5_eff_limit" value="10000" />
-  <xacro:property name="joint6_eff_limit" value="10000" />
+  <xacro:property name="joint1_eff_limit" value="1000" />
+  <xacro:property name="joint2_eff_limit" value="1000" />
+  <xacro:property name="joint3_eff_limit" value="500" />
+  <xacro:property name="joint4_eff_limit" value="200" />
+  <xacro:property name="joint5_eff_limit" value="200" />
+  <xacro:property name="joint6_eff_limit" value="200" />
 
 
-  <link
-    name="${prefix}base_link">
+  <link name="${prefix}base_link">
     <inertial>
       <origin
         xyz="-0.080585 0.00067592 0.086754"
@@ -71,8 +70,7 @@
     </collision>
   </link>
 
-  <link
-    name="${prefix}link1">
+  <link name="${prefix}link1">
     <inertial>
       <origin
         xyz="0.0600446329714386 0.0116665626627102 0.247062352627269"
@@ -111,8 +109,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint1"
+  <joint name="${prefix}joint1"
     type="revolute">
     <origin
       xyz="0 -0.17 0"
@@ -125,8 +122,7 @@
       xyz="0 0 -1" />
     <limit lower="${joint1_pos_lower_limit}" upper="${joint1_pos_upper_limit}" effort="${joint1_eff_limit}" velocity="${joint1_vel_limit}"/>
   </joint>
-  <link
-    name="${prefix}link2">
+  <link name="${prefix}link2">
     <inertial>
       <origin
         xyz="0.0040251350126134 -0.177497207044946 0.578963319749875"
@@ -165,8 +161,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint2"
+  <joint name="${prefix}joint2"
     type="revolute">
     <origin
       xyz="0.175 -0.074807 0.405"
@@ -179,8 +174,7 @@
       xyz="0 1 0" />
     <limit lower="${joint2_pos_lower_limit}" upper="${joint2_pos_upper_limit}" effort="${joint2_eff_limit}" velocity="${joint2_vel_limit}"/>
   </joint>
-  <link
-    name="${prefix}link3">
+  <link name="${prefix}link3">
     <inertial>
       <origin
         xyz="0.0305175734183824 0.097105360534718 0.0162382856824868"
@@ -219,8 +213,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint3"
+  <joint name="${prefix}joint3"
     type="revolute">
     <origin
       xyz="0 0 1.29"
@@ -233,8 +226,7 @@
       xyz="0 1 0" />
     <limit lower="${joint3_pos_lower_limit}" upper="${joint3_pos_upper_limit}" effort="${joint3_eff_limit}" velocity="${joint3_vel_limit}"/>
   </joint>
-  <link
-    name="${prefix}link4">
+  <link name="${prefix}link4">
     <inertial>
       <origin
         xyz="0.400085577392824 0.0280533450779974 -6.01461215805621E-05"
@@ -273,8 +265,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint4"
+  <joint name="${prefix}joint4"
     type="revolute">
     <origin
       xyz="0.32687 0.074807 0.05"
@@ -287,8 +278,7 @@
       xyz="1 0 0" />
     <limit lower="${joint4_pos_lower_limit}" upper="${joint4_pos_upper_limit}" effort="${joint4_eff_limit}" velocity="${joint4_vel_limit}"/>
   </joint>
-  <link
-    name="${prefix}link5">
+  <link name="${prefix}link5">
     <inertial>
       <origin
         xyz="0.0348166227286741 -0.0333672873060013 -7.86869120463773E-05"
@@ -327,8 +317,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint5"
+  <joint name="${prefix}joint5"
     type="revolute">
     <origin
       xyz="0.708131634616243 0 0"
@@ -341,8 +330,7 @@
       xyz="0 1 0" />
     <limit lower="${joint5_pos_lower_limit}" upper="${joint5_pos_upper_limit}" effort="${joint5_eff_limit}" velocity="${joint5_vel_limit}"/>
   </joint>
-  <link
-    name="${prefix}link6">
+  <link name="${prefix}link6">
     <inertial>
       <origin
         xyz="0.0697663509698883 -2.97159715269453E-06 -4.15148219581329E-05"
@@ -381,8 +369,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="${prefix}joint6"
+  <joint name="${prefix}joint6"
     type="revolute">
     <origin
       xyz="0.0966663727881543 0 0"
@@ -405,11 +392,8 @@
   </joint>
   <link name="${prefix}flange">
     <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.01" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
       <inertia
         ixx="0.00001"
         ixy="0.00000"

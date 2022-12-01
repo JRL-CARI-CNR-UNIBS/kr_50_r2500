@@ -1,5 +1,5 @@
 controller_list:
-  - name: kr_50_r2500
+  - name: manipulator_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True

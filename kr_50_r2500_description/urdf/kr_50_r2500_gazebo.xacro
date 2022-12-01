@@ -13,7 +13,7 @@
     </plugin>
   </gazebo>
 
-  <gazebo reference="${prefix}flange">
+  <gazebo reference="${prefix}link6_to_flange">
       <provideFeedback>true</provideFeedback>
       <disableFixedJointLumping>true</disableFixedJointLumping>
       <preserveFixedJoint>true</preserveFixedJoint>
@@ -21,9 +21,9 @@
 
   <gazebo>
       <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
-          <updateRate>100.0</updateRate>
+          <updateRate>1000.0</updateRate>
           <topicName>${prefix}gripper/wrench</topicName>
-          <jointName>${prefix}flange</jointName>
+          <jointName>${prefix}link6_to_flange</jointName>
       </plugin>
   </gazebo>
 

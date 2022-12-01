@@ -3,7 +3,7 @@
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
-       default=""/>
+       default=" -J joint1 0 -J joint2 -1.5708 -J joint3 1.5708 -J joint4 0 -J joint5 0 -J joint6 0"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -13,7 +13,7 @@
   </include>
 
   <!-- send robot urdf to param server -->
-  <param name="robot_description" command="xacro  '$(find kr_50_r2500_gazebo)/urdf/kr_50_r2500.xacro'" />
+  <param name="robot_description" command="xacro  '$(find kr_50_r2500_description)/urdf/kr_50_r2500_alone.xacro'" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
