@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam command="load" param='coke_can'    file="$(find kuka_coke_gazebo)/models/coke_can/model.sdf"/>
+  <rosparam command="load" param='coke_can_10' file="$(find kuka_coke_gazebo)/models/coke_can/model_10kg.sdf"/>
+  <rosparam command="load" param='coke_can_20' file="$(find kuka_coke_gazebo)/models/coke_can/model_20kg.sdf"/>
+  <rosparam command="load" param='coke_can_30' file="$(find kuka_coke_gazebo)/models/coke_can/model_30kg.sdf"/>
+  <rosparam command="load" param='coke_can_40' file="$(find kuka_coke_gazebo)/models/coke_can/model_40kg.sdf"/>
+</launch>

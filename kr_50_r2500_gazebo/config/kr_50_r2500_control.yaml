@@ -13,7 +13,7 @@ kr_50_r2500:
     base_frame: world
     tool_frame: flange
     setpoint_topic_name: "/kr_50_r2500/joint_target"
-    natural_frequency: 200   # natural frequency of the closed loop
+    natural_frequency: 100   # natural frequency of the closed loop
     damping: 1              # relative damping of the closed loop
     robustness_gain: 0.01   # robustness gain
-    integral_gain: 0.01
+    integral_gain: [0.01, 0.01, 0.01, 0.01, 0.01, 0.0001]

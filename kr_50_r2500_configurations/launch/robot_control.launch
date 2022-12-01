@@ -1,57 +1,53 @@
 <?xml version="1.0"?>
 
 <launch>
-<arg name="fake" default="true"/>
+  <arg name="fake" default="true"/>
+  <arg name="gazebo" default="false"/>
+  <arg name="launch_prefix" default=""/>
 <!-- <arg name="kinematics_config" default="$(find sharework_cembre_description)/config/cembre_ur10e.yaml" doc="Kinematics config file used for calibration correction. This will be used to verify the robot's calibration is matching the robot_description."/> -->
 <arg name="controllers_configurations" default="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml"/>
 <arg name="controllers_dispatches" default="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml"/>
 
-<!-- CNR_ROS_CONTROL CONFIGURATION -->
-<param name="debug_config" value="$(arg controllers_configurations)"/>
-<param name="debug_dispatches" value="$(arg controllers_dispatches)"/>
-<rosparam command="load" file="$(arg controllers_dispatches)" />
-<rosparam command="load" file="$(find kr_50_r2500_configurations)/config/level0_hw.yaml" />
-<rosparam command="load" file="$(find kr_50_r2500_configurations)/config/level1_controllers.yaml" />
+
+<!-- Load CNR_ROS_CONTROL -->
+<!--Load robot hardware-->
+<rosparam if     = "$(arg gazebo)" command="load" file="$(find kr_50_r2500_configurations)/config/level0_gazebo_hw.yaml" />
+<rosparam unless = "$(arg gazebo)" command="load" file="$(find kr_50_r2500_configurations)/config/level0_hw.yaml" />
+
+<rosparam command="load" file="$(find kr_50_r2500_configurations)/config/level1_hw.yaml" />
+
+<!--Load controllers-->
 <rosparam command="load" file="$(find kr_50_r2500_configurations)/config/level0_controllers.yaml" />
-<rosparam unless = "$(arg fake)" command="load" file="$(find sharework_cembre_configurations)/config/level1_hw.yaml" />
-<rosparam if     = "$(arg fake)" command="load" file="$(find sharework_cembre_configurations)/config/fake_level1_hw.yaml" />
+<rosparam command="load" file="$(find kr_50_r2500_configurations)/config/level1_controllers.yaml" />
 
-<!-- LOAD URSCRIPT FOR UR CONTROLLER -->
-<!-- <group ns="ur10e_hw">
-<param name="script_file" type="string" value="$(find sharework_cembre_configurations)/resources/ros_control.urscript" />
-<param name="output_recipe_file" type="string" value="$(find sharework_cembre_configurations)/resources/rtde_output_recipe.txt" />
-<param name="input_recipe_file" type="string" value="$(find sharework_cembre_configurations)/resources/rtde_input_recipe.txt" />
-</group> -->
-
-
-<include file="$(find sharework_cembre_description)/launch/upload.launch"/> <!-- Load URDF -->
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /> <!-- Compute TF forward kin. -->
-
-<node pkg="cnr_configuration_manager"
+<node launch-prefix="$(arg launch_prefix)"
+      pkg="cnr_configuration_manager"
       type="cnr_configuration_manager_node"
       name="configuration_manager" output="screen">
 
   <rosparam>
     appenders: [screen,file]
-    levels: [info,debug]
-    file_name: "configuration_manager"
+    levels: [info,info]
+    file_name: "controller_manager"
     append_to_file: true
     pattern_layout: "[%5p][%d{HH:mm:ss,SSS}][%M:%04L][%c] %m%n"
   </rosparam>
 
-  <rosparam command="load" file="$(arg controllers_configurations)" />
-  <param name="num_worker_threads" value="40" />
-
+  <!--Load configurations-->
+  <rosparam command="load" file="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml" />
 </node>
+
 
 <node pkg="cnr_configuration_manager" type="dispatcher" name="configuration_dispatcher" output="screen" >
 <rosparam>
-  appenders: [screen]
-  levels: [info]
+  appenders: [screen,file]
+  levels: [info,file]
   file_name: "configuration_dispatcher"
   pattern_layout: "[%5p][%d{HH:mm:ss,SSS}][%M:%04L][%c] %m%n"
 </rosparam>
-  <remap from="~configuration_dispatches" to="/configuration_dispatches" />
+  <param name="num_worker_threads" value="40" />
+  <!-- Load dispatches -->
+  <rosparam command="load" file="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml" />
 </node>
 
 </launch>
