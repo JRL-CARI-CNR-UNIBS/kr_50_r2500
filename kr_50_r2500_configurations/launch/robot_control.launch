@@ -4,9 +4,8 @@
   <arg name="fake" default="true"/>
   <arg name="gazebo" default="false"/>
   <arg name="launch_prefix" default=""/>
-<!-- <arg name="kinematics_config" default="$(find sharework_cembre_description)/config/cembre_ur10e.yaml" doc="Kinematics config file used for calibration correction. This will be used to verify the robot's calibration is matching the robot_description."/> -->
-<arg name="controllers_configurations" default="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml"/>
-<arg name="controllers_dispatches" default="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml"/>
+  <arg name="controllers_configurations" default="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml"/>
+  <arg name="controllers_dispatches" default="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml"/>
 
 
 <!-- Load CNR_ROS_CONTROL -->

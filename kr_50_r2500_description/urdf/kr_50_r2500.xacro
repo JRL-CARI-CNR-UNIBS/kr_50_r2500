@@ -22,12 +22,12 @@
   <xacro:property name="joint5_vel_limit" value="3.92699" />    <!--  250°/s -->
   <xacro:property name="joint6_vel_limit" value="5.65487" />    <!--  360°/s -->
 
-  <xacro:property name="joint1_eff_limit" value="1000" />
-  <xacro:property name="joint2_eff_limit" value="1000" />
-  <xacro:property name="joint3_eff_limit" value="500" />
-  <xacro:property name="joint4_eff_limit" value="200" />
-  <xacro:property name="joint5_eff_limit" value="200" />
-  <xacro:property name="joint6_eff_limit" value="200" />
+  <xacro:property name="joint1_eff_limit" value="10000" />
+  <xacro:property name="joint2_eff_limit" value="10000" />
+  <xacro:property name="joint3_eff_limit" value="10000" />
+  <xacro:property name="joint4_eff_limit" value="10000" />
+  <xacro:property name="joint5_eff_limit" value="10000" />
+  <xacro:property name="joint6_eff_limit" value="10000" />
 
 
   <link name="${prefix}base_link">
