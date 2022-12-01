@@ -3,7 +3,7 @@ control_configurations:
   components:
   - {hardware_interface: "level0_hw", controller: "js_pub", description: ""}
   - {hardware_interface: "level0_hw", controller: "ft_pub", description: ""}
-  - {hardware_interface: "level1_hw", controller: "js_pub", description: ""}
+  #- {hardware_interface: "level1_hw", controller: "js_pub", description: ""}
 
 - name: "ctrl"
   depends: ["watch"]
