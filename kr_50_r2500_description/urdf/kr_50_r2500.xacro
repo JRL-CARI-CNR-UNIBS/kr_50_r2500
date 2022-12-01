@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="kr_50_r2500"  params="prefix:='' interface:=hardware_interface/EffortJointInterface">
+
+  <xacro:property name="joint1_pos_upper_limit" value="2.90597" />    <!--  185° -->
+  <xacro:property name="joint1_pos_lower_limit" value="-2.90597" />   <!-- -185° -->
+  <xacro:property name="joint2_pos_upper_limit" value="0.942478" />   <!--   60° -->
+  <xacro:property name="joint2_pos_lower_limit" value="-2.74889" />   <!-- -175° -->
+  <xacro:property name="joint3_pos_upper_limit" value="2.67035" />    <!--  170° -->
+  <xacro:property name="joint3_pos_lower_limit" value="-1.88496" />   <!-- -120° -->
+  <xacro:property name="joint4_pos_upper_limit" value="2.82743" />    <!--  180° -->
+  <xacro:property name="joint4_pos_lower_limit" value="-2.82743" />   <!-- -180° -->
+  <xacro:property name="joint5_pos_upper_limit" value="1.9635" />     <!--  125° -->
+  <xacro:property name="joint5_pos_lower_limit" value="-1.9635" />    <!-- -125° -->
+  <xacro:property name="joint6_pos_upper_limit" value="5.49779" />    <!--  350° -->
+  <xacro:property name="joint6_pos_lower_limit" value="-5.49779" />   <!-- -350° -->
+
+  <xacro:property name="joint1_vel_limit" value="2.74889" />    <!--  175°/s -->
+  <xacro:property name="joint2_vel_limit" value="2.48186" />    <!--  158°/s -->
+  <xacro:property name="joint3_vel_limit" value="2.74889" />    <!--  175°/s -->
+  <xacro:property name="joint4_vel_limit" value="3.92699" />    <!--  250°/s -->
+  <xacro:property name="joint5_vel_limit" value="3.92699" />    <!--  250°/s -->
+  <xacro:property name="joint6_vel_limit" value="5.65487" />    <!--  360°/s -->
+
+  <xacro:property name="joint1_eff_limit" value="10000" />
+  <xacro:property name="joint2_eff_limit" value="10000" />
+  <xacro:property name="joint3_eff_limit" value="10000" />
+  <xacro:property name="joint4_eff_limit" value="10000" />
+  <xacro:property name="joint5_eff_limit" value="10000" />
+  <xacro:property name="joint6_eff_limit" value="10000" />
+
+
+  <link
+    name="${prefix}base_link">
+    <inertial>
+      <origin
+        xyz="-0.080585 0.00067592 0.086754"
+        rpy="0 0 0" />
+      <mass
+        value="30.385" />
+      <inertia
+        ixx="0.38941"
+        ixy="0.0047083"
+        ixz="0.060696"
+        iyy="0.87424"
+        iyz="-0.00029206"
+        izz="1.0819" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="${prefix}link1">
+    <inertial>
+      <origin
+        xyz="0.0600446329714386 0.0116665626627102 0.247062352627269"
+        rpy="0 0 0" />
+      <mass
+        value="56.0953515273858" />
+      <inertia
+        ixx="1.7123503270672"
+        ixy="0.020886843872196"
+        ixz="-0.525246219592262"
+        iyy="2.15349859010488"
+        iyz="-0.031415061955379"
+        izz="1.31690706549715" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint1"
+    type="revolute">
+    <origin
+      xyz="0 -0.17 0"
+      rpy="1.5708 0.009141 0" />
+    <parent
+      link="${prefix}base_link" />
+    <child
+      link="${prefix}link1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit lower="${joint1_pos_lower_limit}" upper="${joint1_pos_upper_limit}" effort="${joint1_eff_limit}" velocity="${joint1_vel_limit}"/>
+  </joint>
+  <link
+    name="${prefix}link2">
+    <inertial>
+      <origin
+        xyz="0.0040251350126134 -0.177497207044946 0.578963319749875"
+        rpy="0 0 0" />
+      <mass
+        value="35.5942562362571" />
+      <inertia
+        ixx="4.47662495992728"
+        ixy="-0.00203441583192867"
+        ixz="0.0769841500591921"
+        iyy="4.49958249588231"
+        iyz="0.214283202316168"
+        izz="0.238618624180958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint2"
+    type="revolute">
+    <origin
+      xyz="0.175 -0.074807 0.405"
+      rpy="0 1.557055  0" />
+    <parent
+      link="${prefix}link1" />
+    <child
+      link="${prefix}link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="${joint2_pos_lower_limit}" upper="${joint2_pos_upper_limit}" effort="${joint2_eff_limit}" velocity="${joint2_vel_limit}"/>
+  </joint>
+  <link
+    name="${prefix}link3">
+    <inertial>
+      <origin
+        xyz="0.0305175734183824 0.097105360534718 0.0162382856824868"
+        rpy="0 0 0" />
+      <mass
+        value="36.6784876951283" />
+      <inertia
+        ixx="0.563908772434098"
+        ixy="0.0648382829251099"
+        ixz="-0.0822356915818992"
+        iyy="0.7868662787778"
+        iyz="0.00379928707270628"
+        izz="1.01511384262152" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint3"
+    type="revolute">
+    <origin
+      xyz="0 0 1.29"
+      rpy="0 -1.557055 0" />
+    <parent
+      link="${prefix}link2" />
+    <child
+      link="${prefix}link3" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="${joint3_pos_lower_limit}" upper="${joint3_pos_upper_limit}" effort="${joint3_eff_limit}" velocity="${joint3_vel_limit}"/>
+  </joint>
+  <link
+    name="${prefix}link4">
+    <inertial>
+      <origin
+        xyz="0.400085577392824 0.0280533450779974 -6.01461215805621E-05"
+        rpy="0 0 0" />
+      <mass
+        value="15.1542881051753" />
+      <inertia
+        ixx="0.0701060691297577"
+        ixy="-0.0990093812478981"
+        ixz="0.00018489912158269"
+        iyy="0.729933929975417"
+        iyz="-2.55452640777306E-05"
+        izz="0.748398699396793" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint4"
+    type="revolute">
+    <origin
+      xyz="0.32687 0.074807 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="${prefix}link3" />
+    <child
+      link="${prefix}link4" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="${joint4_pos_lower_limit}" upper="${joint4_pos_upper_limit}" effort="${joint4_eff_limit}" velocity="${joint4_vel_limit}"/>
+  </joint>
+  <link
+    name="${prefix}link5">
+    <inertial>
+      <origin
+        xyz="0.0348166227286741 -0.0333672873060013 -7.86869120463773E-05"
+        rpy="0 0 0" />
+      <mass
+        value="5.17490767884354" />
+      <inertia
+        ixx="0.0198943557123769"
+        ixy="-0.00379528838423929"
+        ixz="-3.17734786601442E-05"
+        iyy="0.0325404927644558"
+        iyz="2.0392665049925E-05"
+        izz="0.0334468145607699" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint5"
+    type="revolute">
+    <origin
+      xyz="0.708131634616243 0 0"
+      rpy="0 -0.0 0" />
+    <parent
+      link="${prefix}link4" />
+    <child
+      link="${prefix}link5" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="${joint5_pos_lower_limit}" upper="${joint5_pos_upper_limit}" effort="${joint5_eff_limit}" velocity="${joint5_vel_limit}"/>
+  </joint>
+  <link
+    name="${prefix}link6">
+    <inertial>
+      <origin
+        xyz="0.0697663509698883 -2.97159715269453E-06 -4.15148219581329E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.362972835401582" />
+      <inertia
+        ixx="0.000809216081686161"
+        ixy="9.97029573660496E-10"
+        ixz="2.41841688721677E-07"
+        iyy="0.000440777200154296"
+        iyz="1.15745872636665E-07"
+        izz="0.000441694717362902" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kr_50_r2500_gazebo/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}joint6"
+    type="revolute">
+    <origin
+      xyz="0.0966663727881543 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="${prefix}link5" />
+    <child
+      link="${prefix}link6" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="${joint6_pos_lower_limit}" upper="${joint6_pos_upper_limit}" effort="${joint6_eff_limit}" velocity="${joint6_vel_limit}"/>
+  </joint>
+
+  <joint name="${prefix}link6_to_flange" type="fixed">
+      <origin
+        xyz="0.07 0 0"
+        rpy="0 1.57079632679 0" />
+      <parent link="${prefix}link6"/>
+      <child link="${prefix}flange"/>
+  </joint>
+  <link name="${prefix}flange">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0.00001"
+        ixy="0.00000"
+        ixz="0.00000"
+        iyy="0.00001"
+        iyz="0.00000"
+        izz="0.00000" />
+    </inertial>
+  </link>
+
+  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_transmission.xacro" />
+  <xacro:kr_50_r2500_transmission prefix="${prefix}" interface="${interface}"/>
+  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_gazebo.xacro" />
+  <xacro:kr_50_r2500_roscontrol prefix="${prefix}"/>
+</xacro:macro>
+
+</robot>

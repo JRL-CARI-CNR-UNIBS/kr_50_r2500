@@ -1,15 +1,13 @@
 controller_joint_names: [joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
-#
-# joint_names: [joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
 
 kr_50_r2500:
   sample_period: 1.0e-3
+
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 500
+    publish_rate: 50
 
-  # Position Controllers ---------------------------------------
   robust_inverse_dynamics:
     type: robot_control/RobustInverseDynamicsControl
     base_frame: world
@@ -24,70 +22,9 @@ kr_50_r2500:
     type: robot_control/MimicEffortController
     joint_names:
     - right_finger_joint
+    - left_finger_joint
 
     leading_joint: "right_finger_joint"
     setpoint_topic_name: "/gripper/joint_target"
-    multiplier: [1.0]
-    offset: [0.0]
-
-  # mimic_effort_controller:
-  #   type: robot_control/MimicEffortController
-  #   joint_names: # controlled joints
-  #   - joint_finger_1
-  #   - joint_finger_2
-  #   - joint_finger_3
-  #
-  #   leading_joint: "joint_finger_1"  # leading joint
-  #
-  #   # target effort of a generic joint:  offset+multiplier*effort of leading joint
-  #
-  #   multiplier: [-1.0, 1.0, 1.0] #  (default 1.0)
-  #   offset: [0.0, 0.0, 0.0] # (default null)
-  #
-  #   setpoint_topic_name: "/gripper/joint_target"
-
-  # mimic_controller:
-  #   type: robot_control/MimicController
-  #   joint_names: # controlled joints
-  #   - joint_finger_1
-  #   - joint_finger_2
-  #   - joint_finger_3
-  #
-  #   leading_joint: "joint_finger_1"  # leading joint
-  #
-  #   # target position of a generic joint:  offset+multiplier*position of leading joint
-  #   # target velocity of a generic joint:  multiplier*velocity of leading joint
-  #   multiplier: [-1.0, 1.0, 1.0] #  (default 1.0)
-  #   offset: [0.0, 0.0, 0.0] # (default null)
-  #
-  #   # Kp: [30, 30, 30] # position gain of controller
-  #   # Ki: [10, 10, 10] # integral gain of the controller (default null)
-  #   # Kv: [10, 10, 10] # velocity gain of the controller (default null)
-  #   Kp: [200, 200, 200] # position gain of controller
-  #   Ki: [20, 20, 20] # integral gain of the controller (default null)
-  #   Kv: [20, 20, 20] # velocity gain of the controller (default null)
-  #   max_effort: [1000, 1000, 1000] # maximum effort of the joint
-  #   setpoint_topic_name: "/gripper/joint_target"
-
-  # mimic_controller:
-  #   type: robot_control/MimicController
-  #   joint_names: # controlled joints
-  #   - finger_joint
-  #   - right_outer_knuckle_joint
-  #   - left_inner_knuckle_joint
-  #   - right_inner_knuckle_joint
-  #   - left_inner_finger_joint
-  #   - right_inner_finger_joint
-  #
-  #   leading_joint: "finger_joint"  # leading joint
-  #
-  #   # target position of a generic joint:  offset+multiplier*position of leading joint
-  #   # target velocity of a generic joint:  multiplier*velocity of leading joint
-  #   multiplier: [1.0, 1.0, 1.0, 1.0, -1.0, -1.0] #  (default 1.0)
-  #   offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # (default null)
-  #
-  #   Kp: [0.3, 0.3, 0.3, 0.3, 0.15, 0.15] # position gain of controller
-  #   Ki: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] # integral gain of the controller (default null)
-  #   Kv: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01] # velocity gain of the controller (default null)
-  #   max_effort: [3, 3, 0.3, 0.3, 0.3, 0.3] # maximum effort of the joint
-  #   setpoint_topic_name: "/robotiq/joint_target"
+    multiplier: [1.0, 1.0]
+    offset: [0.0, 0.0]

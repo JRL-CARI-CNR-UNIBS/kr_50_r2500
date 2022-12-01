@@ -15,15 +15,8 @@
     <arg name="headless" value="$(arg headless)"/>
   </include>
 
-  <param name="table_description"
-    command="$(find xacro)/xacro --inorder '$(find kr_50_r2500_gazebo)/urdf/table.xacro'" />
-
-  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
-  <node name="urdf_table_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -model table -param table_description"/>
-
   <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find kr_50_r2500_gazebo)/urdf/kr_50_r2500.xacro'" />
+    command="$(find xacro)/xacro --inorder '$(find kr_50_r2500_description)/urdf/kr_50_r2500_alone.xacro'" />
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_kr_50_r2500_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
@@ -31,7 +24,5 @@
     -model kr_50_r2500
     -param robot_description
     -J joint2 -1.57"/>
-  <!-- ros_control rrbot launch file -->
-  <!--include file="$(find rrbot_control)/launch/rrbot_control.launch" /-->
-
+  
 </launch>

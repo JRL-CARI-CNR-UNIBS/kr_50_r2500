@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="kr_50_r2500" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500.xacro" />
+
+  <xacro:property name="prefix" value="''" />
+
+<link name="world"/>
+  <xacro:kr_50_r2500 prefix="${prefix}"/>
+  <joint name="${prefix}world_to_base_link" type="fixed">
+      <origin
+        xyz="0 0 0"
+        rpy="-1.57079632679 0 0" />
+      <parent link="world"/>
+      <child link="${prefix}base_link"/>
+  </joint>
+</robot>
