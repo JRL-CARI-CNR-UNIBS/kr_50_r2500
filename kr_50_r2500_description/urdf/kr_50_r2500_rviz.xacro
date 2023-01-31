@@ -4,12 +4,13 @@
 
   <xacro:property name="prefix" value="''" />
 
-<link name="world"/>
   <xacro:kr_50_r2500 prefix="${prefix}"/>
+
+  <link name="world"/>
   <joint name="${prefix}world_to_base_link" type="fixed">
       <origin
         xyz="0 0 0"
-        rpy="-1.57079632679 0 0" />
+        rpy="${-pi/2} 0 0" />
       <parent link="world"/>
       <child link="${prefix}base_link"/>
   </joint>

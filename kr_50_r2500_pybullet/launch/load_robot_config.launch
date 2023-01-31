@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam command="load" file="$(find kr_50_r2500_pybullet)/config/kr_50_r2500_params.yaml"/>
+</launch>
