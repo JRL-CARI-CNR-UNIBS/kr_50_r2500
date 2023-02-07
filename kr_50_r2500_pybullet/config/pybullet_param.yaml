@@ -10,9 +10,9 @@ joint_state_publish_rate: 250
 joint_target_publish_rate: 250
 
 robots:
-- 'kr_50_r2500'
+- '$(arg robot_name)'
 
-kr_50_r2500:
+$(arg robot_name):
   start_position: [0,0,0]
   start_orientation: [-1.57,0,0]
   fixed: 1    # 1 to fix robot to world, 0 to spawn it unfixed

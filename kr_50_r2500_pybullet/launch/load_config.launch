@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 
 <launch>
-  <include file="$(find kr_50_r2500_pybullet)/launch/load_robot_config.launch" />
-  <rosparam command="load" file="$(find kr_50_r2500_pybullet)/config/pybullet_param.yaml"/>
+  <arg name="prefix" default=""/>
+  <arg name="robot_name" default="kr_50_r2500"/>
+
+  <include file="$(find kr_50_r2500_pybullet)/launch/load_robot_config.launch">
+    <arg name="prefix" value="$(arg prefix)"/>
+    <arg name="robot_name" value="$(arg robot_name)"/>
+  </include>
+
+  <rosparam command="load" file="$(find kr_50_r2500_pybullet)/config/pybullet_param.yaml" subst_value="true"/>
 </launch>
