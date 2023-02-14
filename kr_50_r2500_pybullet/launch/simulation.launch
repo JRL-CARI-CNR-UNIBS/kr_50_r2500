@@ -11,6 +11,6 @@
     <arg name="robot_name" value="$(arg robot_name)"/>
   </include>
 
-  <node name="kr_50_r2500_pybullet" pkg="pybullet_utils" type="pybullet_simulation.py" output="screen"/>
+  <include file="$(find pybullet_utils)/launch/run_pybullet.launch" />
 
 </launch>
