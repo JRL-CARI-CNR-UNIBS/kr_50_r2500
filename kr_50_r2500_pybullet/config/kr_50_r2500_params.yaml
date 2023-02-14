@@ -1,5 +1,6 @@
 $(arg robot_name):
-  foulder_path: '/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/urdf'
+  package_name: 'kr_50_r2500_description'
+  foulder_name: 'urdf'
   xacro_file_name: 'kr_50_r2500_pybullet'   # an urdf file with the same name will be generated
   controlled_joint_name: ['$(arg prefix)joint1', '$(arg prefix)joint2', '$(arg prefix)joint3', '$(arg prefix)joint4', '$(arg prefix)joint5', '$(arg prefix)joint6']
   joint_control_mode : 'position' # position (which is in fact POSITION_VELOCITY_PD), velocity, torque and pd.
