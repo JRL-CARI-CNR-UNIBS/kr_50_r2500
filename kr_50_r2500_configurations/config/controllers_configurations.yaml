@@ -29,9 +29,9 @@ control_configurations:
   - {hardware_interface: "level1_hw", controller: "microinterpolator", description: ""}
 
 - name: "trajectory_tracking"
-  depends: ["ctrl"]
+  depends: ["watch"]
   components:
-  - {hardware_interface: "level1_hw", controller: "microinterpolator", description: ""}
+  - {hardware_interface: "level0_hw", controller: "microinterpolator", description: ""}
 
 - name: "impedance"
   depends: ["watch"]

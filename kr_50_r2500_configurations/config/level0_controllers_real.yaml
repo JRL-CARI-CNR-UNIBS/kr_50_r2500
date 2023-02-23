@@ -6,7 +6,10 @@ level0_hw:
   - "/level0_hw/microinterpolator/follow_joint_trajectory/result"
   - "/level0_hw/microinterpolator/follow_joint_trajectory/status"
   - "/level0_hw/microinterpolator/unscaled_joint_target"
+  - "/level0_hw/microinterpolator/execution_ratio"
+
   - "/level0_hw/js_pub/joint_states"
+
   - "/level0_hw/cartesian_position/relative_move/cancel"
   - "/level0_hw/cartesian_position/relative_move/feedback"
   - "/level0_hw/cartesian_position/relative_move/goal"
@@ -20,7 +23,10 @@ level0_hw:
   - "/kr_50_r2500/follow_joint_trajectory/result"
   - "/kr_50_r2500/follow_joint_trajectory/status"
   - "/unscaled_joint_target"
+  - "/execution_ratio"
+
   - "/controller_manager/joint_states"
+
   - "/relative_move/cancel"
   - "/relative_move/feedback"
   - "/relative_move/goal"
@@ -62,6 +68,11 @@ level0_hw:
     levels: [debug, info]
     pattern_layout: "[%5p][%d{HH:mm:ss,SSS}][%M:%L][%c] %m%n"
     file_name: "microinterpolator"
+    goal_tolerance: 0.0001
+    path_tolerance: 0.001
+    check_tolerance: true
+    pub_log_target: true
+    clik_gain: 0.0
 
   cartesian_velocity:
     appenders: [file, screen]
