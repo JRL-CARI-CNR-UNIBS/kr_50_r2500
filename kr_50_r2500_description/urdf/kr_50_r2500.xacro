@@ -30,7 +30,7 @@
   <xacro:property name="joint6_eff_limit" value="10000" />
 
 
-  <link name="${prefix}base_link">
+  <link name="${prefix}base_link" concave="yes">
     <inertial>
       <origin
         xyz="-0.080585 0.00067592 0.086754"
@@ -59,7 +59,7 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -70,7 +70,7 @@
     </collision>
   </link>
 
-  <link name="${prefix}link1">
+  <link name="${prefix}link1" concave="yes">
     <inertial>
       <origin
         xyz="0.0600446329714386 0.0116665626627102 0.247062352627269"
@@ -99,7 +99,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -122,7 +122,7 @@
       xyz="0 0 -1" />
     <limit lower="${joint1_pos_lower_limit}" upper="${joint1_pos_upper_limit}" effort="${joint1_eff_limit}" velocity="${joint1_vel_limit}"/>
   </joint>
-  <link name="${prefix}link2">
+  <link name="${prefix}link2" concave="yes">
     <inertial>
       <origin
         xyz="0.0040251350126134 -0.177497207044946 0.578963319749875"
@@ -151,7 +151,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -174,7 +174,7 @@
       xyz="0 1 0" />
     <limit lower="${joint2_pos_lower_limit}" upper="${joint2_pos_upper_limit}" effort="${joint2_eff_limit}" velocity="${joint2_vel_limit}"/>
   </joint>
-  <link name="${prefix}link3">
+  <link name="${prefix}link3" concave="yes">
     <inertial>
       <origin
         xyz="0.0305175734183824 0.097105360534718 0.0162382856824868"
@@ -203,7 +203,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -226,7 +226,7 @@
       xyz="0 1 0" />
     <limit lower="${joint3_pos_lower_limit}" upper="${joint3_pos_upper_limit}" effort="${joint3_eff_limit}" velocity="${joint3_vel_limit}"/>
   </joint>
-  <link name="${prefix}link4">
+  <link name="${prefix}link4" concave="yes">
     <inertial>
       <origin
         xyz="0.400085577392824 0.0280533450779974 -6.01461215805621E-05"
@@ -255,7 +255,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -278,7 +278,7 @@
       xyz="1 0 0" />
     <limit lower="${joint4_pos_lower_limit}" upper="${joint4_pos_upper_limit}" effort="${joint4_eff_limit}" velocity="${joint4_vel_limit}"/>
   </joint>
-  <link name="${prefix}link5">
+  <link name="${prefix}link5" concave="yes">
     <inertial>
       <origin
         xyz="0.0348166227286741 -0.0333672873060013 -7.86869120463773E-05"
@@ -307,7 +307,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -330,7 +330,7 @@
       xyz="0 1 0" />
     <limit lower="${joint5_pos_lower_limit}" upper="${joint5_pos_upper_limit}" effort="${joint5_eff_limit}" velocity="${joint5_vel_limit}"/>
   </joint>
-  <link name="${prefix}link6">
+  <link name="${prefix}link6" concave="yes">
     <inertial>
       <origin
         xyz="0.0697663509698883 -2.97159715269453E-06 -4.15148219581329E-05"
@@ -359,7 +359,7 @@
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />

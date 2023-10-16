@@ -1,15 +1,16 @@
 controller_list:
-  - name: fake_kr_50_r2500_controller
+  - name: fake_kr_50_r2500_schunk_jpg_p_160_controller
     type: $(arg fake_execution_type)
     joints:
-      - joint1
-      - joint2
-      - joint3
-      - joint4
-      - joint5
-      - joint6
+      - structure_joint_1
+      - kr_joint1
+      - kr_joint2
+      - kr_joint3
+      - kr_joint4
+      - kr_joint5
+      - kr_joint6
 initial:  # Define initial robot poses per group
-#  - group: kr_50_r2500
+#  - group: kr_50_r2500_schunk_jpg_p_160
 #    pose: home
 
   []

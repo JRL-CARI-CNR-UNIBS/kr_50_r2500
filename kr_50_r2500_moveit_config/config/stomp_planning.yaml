@@ -1,5 +1,5 @@
-stomp/kr_50_r2500:
-  group_name: kr_50_r2500
+stomp/kr_50_r2500_schunk_jpg_p_160:
+  group_name: kr_50_r2500_schunk_jpg_p_160
   optimization:
     num_timesteps: 60
     num_iterations: 40
@@ -11,7 +11,7 @@ stomp/kr_50_r2500:
   task:
     noise_generator:
       - class: stomp_moveit/NormalDistributionSampling
-        stddev: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
+        stddev: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
     cost_functions:
       - class: stomp_moveit/CollisionCheck
         collision_penalty: 1.0

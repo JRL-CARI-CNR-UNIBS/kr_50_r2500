@@ -7,7 +7,7 @@
 <robot name="kr_50_r2500">
   <!-- -350° -->
   <!--  360°/s -->
-  <link name="base_link">
+  <link concave="yes" name="base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.080585 0.00067592 0.086754"/>
       <mass value="30.385"/>
@@ -16,20 +16,20 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/base_link.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/base_link.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/base_link.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/base_link.STL"/>
       </geometry>
     </collision>
   </link>
-  <link name="link1">
+  <link concave="yes" name="link1">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0600446329714386 0.0116665626627102 0.247062352627269"/>
       <mass value="56.0953515273858"/>
@@ -38,16 +38,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link1.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link1.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link1.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link1.STL"/>
       </geometry>
     </collision>
   </link>
@@ -58,7 +58,7 @@
     <axis xyz="0 0 -1"/>
     <limit effort="10000" lower="-3.22886" upper="3.22886" velocity="3.05433"/>
   </joint>
-  <link name="link2">
+  <link concave="yes" name="link2">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0040251350126134 -0.177497207044946 0.578963319749875"/>
       <mass value="35.5942562362571"/>
@@ -67,16 +67,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link2.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link2.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link2.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link2.STL"/>
       </geometry>
     </collision>
   </link>
@@ -87,7 +87,7 @@
     <axis xyz="0 1 0"/>
     <limit effort="10000" lower="-3.05433" upper="1.0472" velocity="2.75762"/>
   </joint>
-  <link name="link3">
+  <link concave="yes" name="link3">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0305175734183824 0.097105360534718 0.0162382856824868"/>
       <mass value="36.6784876951283"/>
@@ -96,16 +96,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link3.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link3.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link3.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link3.STL"/>
       </geometry>
     </collision>
   </link>
@@ -116,7 +116,7 @@
     <axis xyz="0 1 0"/>
     <limit effort="10000" lower="-2.0944" upper="2.96706" velocity="3.05433"/>
   </joint>
-  <link name="link4">
+  <link concave="yes" name="link4">
     <inertial>
       <origin rpy="0 0 0" xyz="0.400085577392824 0.0280533450779974 -6.01461215805621E-05"/>
       <mass value="15.1542881051753"/>
@@ -125,16 +125,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link4.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link4.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link4.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link4.STL"/>
       </geometry>
     </collision>
   </link>
@@ -145,7 +145,7 @@
     <axis xyz="1 0 0"/>
     <limit effort="10000" lower="-3.14159" upper="3.14159" velocity="4.36332"/>
   </joint>
-  <link name="link5">
+  <link concave="yes" name="link5">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0348166227286741 -0.0333672873060013 -7.86869120463773E-05"/>
       <mass value="5.17490767884354"/>
@@ -154,16 +154,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link5.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link5.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link5.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link5.STL"/>
       </geometry>
     </collision>
   </link>
@@ -174,7 +174,7 @@
     <axis xyz="0 1 0"/>
     <limit effort="10000" lower="-2.18166" upper="2.18166" velocity="4.36332"/>
   </joint>
-  <link name="link6">
+  <link concave="yes" name="link6">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0697663509698883 -2.97159715269453E-06 -4.15148219581329E-05"/>
       <mass value="0.362972835401582"/>
@@ -183,16 +183,16 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link6.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link6.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
       </material>
     </visual>
-    <collision>
+    <collision concave="yes">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://kr_50_r2500_description/meshes/link6.STL"/>
+        <mesh filename="/home/gauss/projects/personal_ws/src/kr_50_r2500/kr_50_r2500_description/meshes/link6.STL"/>
       </geometry>
     </collision>
   </link>

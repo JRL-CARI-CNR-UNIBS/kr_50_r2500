@@ -1,8 +1,12 @@
-$(arg robot_name):
-  package_name: 'kr_50_r2500_description'
-  xacro_file_path: 'urdf/kr_50_r2500_pybullet.xacro'   # an urdf file with the same name will be generated
-  controlled_joint_name: ['$(arg prefix)joint1', '$(arg prefix)joint2', '$(arg prefix)joint3', '$(arg prefix)joint4', '$(arg prefix)joint5', '$(arg prefix)joint6']
-  joint_control_mode : 'position' # position (which is in fact POSITION_VELOCITY_PD), velocity, torque and pd.
-  joint_control_integral_gain: [0,0,0,0,0,50]
-  sensors: # define an array that containing the sensorized joints
-  - '$(arg prefix)link6_to_flange'
+pybullet_simulation:
+  robots:
+    $(arg robot_name):
+      package_name: 'kr_50_r2500_description'
+      xacro_file_path: 'urdf/kr_50_r2500_pybullet.xacro'   # an urdf file with the same name will be generated
+      xacro_params:
+        prefix: '$(arg prefix)'
+      controlled_joint_name: ['$(arg prefix)joint1', '$(arg prefix)joint2', '$(arg prefix)joint3', '$(arg prefix)joint4', '$(arg prefix)joint5', '$(arg prefix)joint6']
+      joint_control_mode : 'position' # position (which is in fact POSITION_VELOCITY_PD), velocity, torque and pd.
+      joint_control_integral_gain: [0,0,0,0,0,50]
+      sensors: # define an array that containing the sensorized joints
+      - '$(arg prefix)link6_to_flange'

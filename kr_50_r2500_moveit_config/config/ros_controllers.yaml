@@ -1,12 +1,6 @@
-controller_list:
-  - name: kr_50_r2500
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-    - joint1
-    - joint2
-    - joint3
-    - joint4
-    - joint5
-    - joint6
+kr_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    []
+  gains:
+    {}

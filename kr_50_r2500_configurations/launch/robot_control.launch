@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="fake" default="true"/>
-  <arg name="launch_prefix" default=""/>
+  <arg name="launch_prefix" default="comau"/>
   <arg name="controllers_configurations" default="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml"/>
   <arg name="controllers_dispatches" default="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml"/>
 
@@ -31,10 +31,8 @@
     pattern_layout: "[%5p][%d{HH:mm:ss,SSS}][%M:%04L][%c] %m%n"
   </rosparam>
 
-  <!--Load configurations-->
   <rosparam command="load" file="$(find kr_50_r2500_configurations)/config/controllers_configurations.yaml" />
 </node>
-
 
 <node pkg="cnr_configuration_manager" type="dispatcher" name="configuration_dispatcher" output="screen" >
 <rosparam>
@@ -44,7 +42,6 @@
   pattern_layout: "[%5p][%d{HH:mm:ss,SSS}][%M:%04L][%c] %m%n"
 </rosparam>
   <param name="num_worker_threads" value="40" />
-  <!-- Load dispatches -->
   <rosparam command="load" file="$(find kr_50_r2500_configurations)/config/controllers_dispatches.yaml" />
 </node>
 
