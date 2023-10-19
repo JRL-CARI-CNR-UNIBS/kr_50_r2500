@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <arg name="prefix" default=""/>
-  <arg name="robot_name" default="kr_50_r2500"/>
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find kr_50_r2500_description)/urdf/kr_50_r2500_rviz.xacro' robot_name:=$(arg robot_name) prefix:=$(arg prefix)"/>
-</launch>

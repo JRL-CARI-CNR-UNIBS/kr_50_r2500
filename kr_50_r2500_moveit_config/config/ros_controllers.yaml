@@ -1,6 +1,0 @@
-kr_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    []
-  gains:
-    {}
