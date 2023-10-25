@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <robot  xmlns:xacro="http://www.ros.org/wiki/xacro">
-<xacro:macro name="kr_50_r2500"  params="name:='kr_50_r2500'
-                                         prefix:=''
-                                         interface:=hardware_interface/EffortJointInterface
-                                         client_ip
-                                         client_port
-                                         use_fake_hardware=false">
+    <xacro:macro name="kr_50_r2500"  params="name:='kr_50_r2500'
+                                             prefix:=''
+                                             interface:=hardware_interface/EffortJointInterface
+                                             client_ip:='192.168.250.200'
+                                             client_port:='59152'
+                                             use_fake_hardware:=false">
 
-  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_robot.xacro" />
-  <xacro:kr_50_r2500_robot prefix="${prefix}"/>
+    <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_robot.xacro" />
+    <xacro:kr_50_r2500_robot prefix="${prefix}"/>
 
-  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_transmission.xacro" />
-  <xacro:kr_50_r2500_transmission prefix="${prefix}" interface="${interface}"/>
+    <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_transmission.xacro" />
+    <xacro:kr_50_r2500_transmission prefix="${prefix}" interface="${interface}"/>
 
-  <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_ros2_control.xacro" />
-  <xacro:kr_50_r2500_ros2_control name="${name}"
-                                  prefix="${prefix}"
-                                  client_ip="${client_ip}"
-                                  client_port="${client_port}"
-                                  use_fake_hardware="${use_fake_hardware}" />
+    <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_ros2_control.xacro" />
+    <xacro:kr_50_r2500_ros2_control name="${name}"
+                                    prefix="${prefix}"
+                                    client_ip="${client_ip}"
+                                    client_port="${client_port}"
+                                    use_fake_hardware="${use_fake_hardware}" />
 
-</xacro:macro>
+    </xacro:macro>
 
 </robot>

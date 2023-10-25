@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(kr_50_r2500_moveit)
+project(kr_50_r2500_moveit_config)
 
 find_package(ament_cmake REQUIRED)
 

@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
-<robot name="$(arg robot_name)" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<robot name="kr_50_r2500" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="robot_name" default="kr_50_r2500"/>
 
   <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500.xacro" />
   <xacro:arg name="prefix" default=""/>

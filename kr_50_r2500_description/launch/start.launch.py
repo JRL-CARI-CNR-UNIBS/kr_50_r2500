@@ -14,14 +14,15 @@
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
-from launch.actions import RegisterEventHandler
+from launch.actions import IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.substitutions import Command, FindExecutable
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.parameter_descriptions import ParameterValue
 from launch.conditions import IfCondition
-from launch.event_handlers import OnProcessExit
+from moveit_configs_utils import MoveItConfigsBuilder
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 def launch_setup(context, *args, **kwargs):
@@ -114,29 +115,12 @@ def launch_setup(context, *args, **kwargs):
                    joint_traj_controller_config],
     )
 
-    delay_joint_nodes_after_control_node = RegisterEventHandler(
-            event_handler=OnProcessExit(
-                target_action=control_node,
-                on_exit=[joint_state_broadcaster_spawner,
-                         joint_trajectory_controller_spawner],
-            )
-        )
-
-    joint_target_publisher = Node(
-        name='joint_target_publisher',
-        package='joint_state_publisher_gui',
-        executable='joint_state_publisher_gui',
-        parameters=[{'rate': 500}],
-    )
-
     nodes_to_start = [
-#        joint_target_publisher,
         control_node,
         robot_state_pub_node,
         rviz_node,
-#        joint_state_broadcaster_spawner,
-#        joint_trajectory_controller_spawner
-        delay_joint_nodes_after_control_node
+        joint_state_broadcaster_spawner,
+        joint_trajectory_controller_spawner
         ]
 
     return nodes_to_start
@@ -160,5 +144,15 @@ def generate_launch_description():
         'rviz_gui',
         default_value="true"
     ))
-    return LaunchDescription(launch_arguments +
-                             [OpaqueFunction(function=launch_setup)])
+    ld = LaunchDescription(launch_arguments +
+                           [OpaqueFunction(function=launch_setup)])
+
+    moveit_config = MoveItConfigsBuilder("kr_50_r2500",
+                                         package_name="kr_50_r2500_moveit_config"
+                                         ).to_moveit_configs()
+
+    ld.add_action(IncludeLaunchDescription(
+                      PythonLaunchDescriptionSource(
+                          str(moveit_config.package_path / "launch/move_group.launch.py"))))
+
+    return ld
