@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+import yaml
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.actions import IncludeLaunchDescription
@@ -23,7 +25,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 from launch.conditions import IfCondition
 from moveit_configs_utils import MoveItConfigsBuilder
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-
+from ament_index_python.packages import get_package_share_directory
 
 def launch_setup(context, *args, **kwargs):
 
@@ -63,6 +65,16 @@ def launch_setup(context, *args, **kwargs):
          "config",
          "ros2_controller_config.yaml"]
     )
+    moveit_config = (
+        MoveItConfigsBuilder("kr_50_r2500")
+        .robot_description(file_path="config/kr_50_r2500.urdf.xacro")
+        .planning_scene_monitor(
+            publish_robot_description=True, publish_robot_description_semantic=True
+        )
+        .robot_description_semantic(file_path="config/kr_50_r2500.srdf")
+        .planning_pipelines("ompl", pipelines=["ompl", "pilz_industrial_motion_planner"])
+        .to_moveit_configs()
+    )
 
     joint_traj_controller_config = PathJoinSubstitution(
         [FindPackageShare("kr_50_r2500_description"),
@@ -95,6 +107,12 @@ def launch_setup(context, *args, **kwargs):
         name="rviz2",
         output="log",
         arguments=["-d", rviz_config_file],
+        parameters=[
+            moveit_config.robot_description,
+            moveit_config.robot_description_semantic,
+            moveit_config.planning_pipelines,
+            moveit_config.robot_description_kinematics
+        ],
         condition=IfCondition(rviz_gui),
     )
 
@@ -105,6 +123,14 @@ def launch_setup(context, *args, **kwargs):
                    "--controller-manager",
                    "/controller_manager"],
     )
+    current_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["current_broadcaster",
+                   "--controller-manager",
+                   "/controller_manager"],
+    )
+
     joint_trajectory_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -115,12 +141,22 @@ def launch_setup(context, *args, **kwargs):
                    joint_traj_controller_config],
     )
 
+    move_group_node = Node(
+           package="moveit_ros_move_group",
+           executable="move_group",
+           output="screen",
+           parameters=[moveit_config.to_dict()],
+           arguments=["--ros-args", "--log-level", "info"],
+    )
+
     nodes_to_start = [
         control_node,
         robot_state_pub_node,
         rviz_node,
         joint_state_broadcaster_spawner,
-        joint_trajectory_controller_spawner
+        current_broadcaster_spawner,
+        joint_trajectory_controller_spawner,
+        move_group_node
         ]
 
     return nodes_to_start
@@ -146,13 +182,5 @@ def generate_launch_description():
     ))
     ld = LaunchDescription(launch_arguments +
                            [OpaqueFunction(function=launch_setup)])
-
-    moveit_config = MoveItConfigsBuilder("kr_50_r2500",
-                                         package_name="kr_50_r2500_moveit_config"
-                                         ).to_moveit_configs()
-
-    ld.add_action(IncludeLaunchDescription(
-                      PythonLaunchDescriptionSource(
-                          str(moveit_config.package_path / "launch/move_group.launch.py"))))
 
     return ld

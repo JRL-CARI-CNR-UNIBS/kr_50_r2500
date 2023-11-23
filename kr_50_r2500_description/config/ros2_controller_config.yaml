@@ -1,9 +1,23 @@
 controller_manager:
   ros__parameters:
-    update_rate: 2500  # Hz
+    update_rate: 1000  # Hz
 
     joint_trajectory_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
+
+    current_broadcaster:
+      type: ethercat_utils/GPIOController
+
+current_broadcaster:
+  ros__parameters:
+    inputs:
+      - joint1/current
+      - joint2/current
+      - joint3/current
+      - joint4/current
+      - joint5/current
+      - joint6/current
+

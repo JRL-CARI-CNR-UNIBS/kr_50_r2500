@@ -275,7 +275,7 @@
     <child
       link="${prefix}link4" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit lower="${joint4_pos_lower_limit}" upper="${joint4_pos_upper_limit}" effort="${joint4_eff_limit}" velocity="${joint4_vel_limit}"/>
   </joint>
   <link name="${prefix}link5" concave="yes">
@@ -379,7 +379,7 @@
     <child
       link="${prefix}link6" />
     <axis
-      xyz="1 0 0" />
+      xyz="-1 0 0" />
     <limit lower="${joint6_pos_lower_limit}" upper="${joint6_pos_upper_limit}" effort="${joint6_eff_limit}" velocity="${joint6_vel_limit}"/>
   </joint>
 

@@ -13,15 +13,8 @@
   <xacro:property name="robot_name" value="'$(arg robot_name)'" />
   <xacro:property name="use_fake_hardware" value="'$(arg use_fake_hardware)'" />
 
-  <xacro:property name="rsi_config" value="$(find kr_50_r2500_description)/config/rsi_config.yaml" />
-  <xacro:property name="rsi_config_dict" value="${xacro.load_yaml(rsi_config)}"/>
-  <xacro:property name="client_ip" value="${rsi_config_dict['client_ip']}" />
-  <xacro:property name="client_port" value="${rsi_config_dict['client_port']}" />
-
   <xacro:kr_50_r2500 name="${robot_name}"
                      prefix="${prefix}"
-                     client_ip="${client_ip}"
-                     client_port="${client_port}"
                      use_fake_hardware="${use_fake_hardware}" />
 
   <link name="world"/>

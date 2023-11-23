@@ -8,4 +8,19 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Michele Delledonne
     author_email: m.delledonne002@unibs.it
-    generated_timestamp: 1697809905
+    generated_timestamp: 1699349522
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

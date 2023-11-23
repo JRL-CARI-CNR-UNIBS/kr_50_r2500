@@ -3,9 +3,12 @@
     <xacro:macro name="kr_50_r2500"  params="name:='kr_50_r2500'
                                              prefix:=''
                                              interface:=hardware_interface/EffortJointInterface
-                                             client_ip:='192.168.250.200'
-                                             client_port:='59152'
                                              use_fake_hardware:=false">
+
+    <xacro:property name="rsi_config" value="$(find kr_50_r2500_description)/config/rsi_config.yaml" />
+    <xacro:property name="rsi_config_dict" value="${xacro.load_yaml(rsi_config)}"/>
+    <xacro:property name="client_ip" value="${rsi_config_dict['client_ip']}" />
+    <xacro:property name="client_port" value="${rsi_config_dict['client_port']}" />
 
     <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500_robot.xacro" />
     <xacro:kr_50_r2500_robot prefix="${prefix}"/>
