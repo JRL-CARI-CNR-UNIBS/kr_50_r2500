@@ -3,12 +3,9 @@
 <!-- It is required to pass the args: robot_name-->
 <robot name="$(arg robot_name)" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500.xacro" />
-  <xacro:arg name="prefix" default="null"/>
+  <xacro:arg name="prefix" default=""/>
 
   <xacro:property name="prefix" value="'$(arg prefix)'" />
-  <xacro:if value="${prefix == 'null'}">
-    <xacro:property name="prefix" value="''" />
-  </xacro:if>
 
   <xacro:kr_50_r2500 prefix="${prefix}"/>
 

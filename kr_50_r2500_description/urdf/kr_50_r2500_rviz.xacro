@@ -1,16 +1,21 @@
 <?xml version="1.0"?>
 
-<!-- It is required to pass the args: robot_name-->
-<robot name="$(arg robot_name)" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<robot name="kr_50_r2500" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="robot_name" default="kr_50_r2500"/>
+
   <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500.xacro" />
-  <xacro:arg name="prefix" default="null"/>
+  <xacro:arg name="prefix" default=""/>
+  <xacro:arg name="use_fake_hardware" default="false"/>
 
   <xacro:property name="prefix" value="'$(arg prefix)'" />
-  <xacro:if value="${prefix == 'null'}">
-    <xacro:property name="prefix" value="''" />
-  </xacro:if>
+  <xacro:property name="robot_name" value="'$(arg robot_name)'" />
+  <xacro:property name="use_fake_hardware" value="'$(arg use_fake_hardware)'" />
 
-  <xacro:kr_50_r2500 prefix="${prefix}"/>
+  <xacro:kr_50_r2500 name="${robot_name}"
+                     prefix="${prefix}"
+                     use_fake_hardware="${use_fake_hardware}" />
 
   <link name="world"/>
   <joint name="${prefix}world_to_base_link" type="fixed">
@@ -20,4 +25,5 @@
       <parent link="world"/>
       <child link="${prefix}base_link"/>
   </joint>
+
 </robot>

@@ -37,4 +37,13 @@
   <arg name="fake" value="$(arg fake)"/>
   <arg name="launch_prefix" value="$(arg launch_prefix)"/>
 </include>
+
+<rosparam command="load" file="$(find battery_cell_configurations)/config/local_ip.yaml"/>
+<rosparam command="load" file="$(find kuka_rsi_hw_interface)/config/controller_joint_names.yaml"/>
+<rosparam command="load" file="$(find kuka_rsi_hw_interface)/config/hardware_controllers.yaml"/>
+<node name="kuka_hardware_interface" pkg="kuka_rsi_hw_interface"
+  type="kuka_hardware_interface_node" respawn="false"
+  output="screen"
+  required="true"/>
+
 </launch>
