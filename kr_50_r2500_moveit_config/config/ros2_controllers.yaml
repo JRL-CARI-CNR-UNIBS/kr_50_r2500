@@ -20,6 +20,7 @@ joint_trajectory_controller:
       - joint5
       - joint6
     command_interfaces:
-      []
+      - position
     state_interfaces:
-      []
+      - position
+      - velocity

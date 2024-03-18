@@ -3,7 +3,7 @@
     <xacro:macro name="kr_50_r2500"  params="name:='kr_50_r2500'
                                              prefix:=''
                                              interface:=hardware_interface/EffortJointInterface
-                                             use_fake_hardware:=false">
+                                             use_fake_hardware:=true">
 
     <xacro:property name="rsi_config" value="$(find kr_50_r2500_description)/config/rsi_config.yaml" />
     <xacro:property name="rsi_config_dict" value="${xacro.load_yaml(rsi_config)}"/>

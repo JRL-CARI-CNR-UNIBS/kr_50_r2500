@@ -7,7 +7,7 @@
 
   <xacro:include filename="$(find kr_50_r2500_description)/urdf/kr_50_r2500.xacro" />
   <xacro:arg name="prefix" default=""/>
-  <xacro:arg name="use_fake_hardware" default="false"/>
+  <xacro:arg name="use_fake_hardware" default="true"/>
 
   <xacro:property name="prefix" value="'$(arg prefix)'" />
   <xacro:property name="robot_name" value="'$(arg robot_name)'" />
