@@ -113,7 +113,7 @@
     type="revolute">
     <origin
       xyz="0 -0.17 0"
-      rpy="1.5708 0.009141 0" />
+      rpy="1.57079632679489661923 0.0 0" />
     <parent
       link="${prefix}base_link" />
     <child
@@ -165,7 +165,7 @@
     type="revolute">
     <origin
       xyz="0.175 -0.074807 0.405"
-      rpy="0 1.557055  0" />
+      rpy="0 1.57079632679489661923  0" />
     <parent
       link="${prefix}link1" />
     <child
@@ -217,7 +217,7 @@
     type="revolute">
     <origin
       xyz="0 0 1.29"
-      rpy="0 -1.557055 0" />
+      rpy="0 -1.57079632679489661923 0" />
     <parent
       link="${prefix}link2" />
     <child
@@ -321,7 +321,7 @@
     type="revolute">
     <origin
       xyz="0.708131634616243 0 0"
-      rpy="0 -0.0 0" />
+      rpy="0 0 0" />
     <parent
       link="${prefix}link4" />
     <child
@@ -386,7 +386,7 @@
   <joint name="${prefix}link6_to_flange" type="fixed">
       <origin
         xyz="0.07 0 0"
-        rpy="0 1.57079632679 0" />
+        rpy="0 1.57079632679489661923 0" />
       <parent link="${prefix}link6"/>
       <child link="${prefix}flange"/>
   </joint>
