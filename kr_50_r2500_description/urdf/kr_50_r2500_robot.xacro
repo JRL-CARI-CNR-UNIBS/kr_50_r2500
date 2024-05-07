@@ -12,8 +12,8 @@
   <xacro:property name="joint4_pos_lower_limit" value="-3.14159" />   <!-- -180° -->
   <xacro:property name="joint5_pos_upper_limit" value="2.18166" />    <!--  125° -->
   <xacro:property name="joint5_pos_lower_limit" value="-2.18166" />   <!-- -125° -->
-  <xacro:property name="joint6_pos_upper_limit" value="6.10865" />    <!--  350° -->
-  <xacro:property name="joint6_pos_lower_limit" value="-6.10865" />   <!-- -350° -->
+  <xacro:property name="joint6_pos_upper_limit" value="3.14159" />    <!--  180° -->
+  <xacro:property name="joint6_pos_lower_limit" value="-4.71239" />   <!-- -270° -->
 
   <xacro:property name="joint1_vel_limit" value="3.05433" />    <!--  175°/s -->
   <xacro:property name="joint2_vel_limit" value="2.75762" />    <!--  158°/s -->
