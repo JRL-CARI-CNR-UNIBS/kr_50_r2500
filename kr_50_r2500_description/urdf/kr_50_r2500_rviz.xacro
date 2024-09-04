@@ -17,21 +17,12 @@
                      prefix="${prefix}"
                      use_fake_hardware="${use_fake_hardware}" />
 
-  <link name="${prefix}base"/>
-  <joint name="${prefix}base_to_base_link" type="fixed">
-    <parent link="${prefix}base"/>
-    <child link="${prefix}base_link"/>
-    <origin rpy="-1.57079632679489661923 0 0"/>
-  </joint>
 
 
   <link name="world"/>
   <joint name="${prefix}world_to_base" type="fixed">
-      <!-- <origin
-        xyz="0 0 0"
-        rpy="${-pi/2} 0 0" /> -->
       <parent link="world"/>
-      <child link="${prefix}base"/>
+      <child link="${prefix}iksolver_base_link"/>
   </joint>
   
 
