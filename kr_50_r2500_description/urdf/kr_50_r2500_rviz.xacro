@@ -17,13 +17,13 @@
                      prefix="${prefix}"
                      use_fake_hardware="${use_fake_hardware}" />
 
+
+
   <link name="world"/>
-  <joint name="${prefix}world_to_base_link" type="fixed">
-      <origin
-        xyz="0 0 0"
-        rpy="${-pi/2} 0 0" />
+  <joint name="${prefix}world_to_base" type="fixed">
       <parent link="world"/>
       <child link="${prefix}base_link"/>
   </joint>
+  
 
 </robot>

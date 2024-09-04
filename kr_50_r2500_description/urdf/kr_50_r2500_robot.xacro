@@ -29,12 +29,19 @@
   <xacro:property name="joint5_eff_limit" value="10000" />
   <xacro:property name="joint6_eff_limit" value="10000" />
 
+<!--
+  <link name="${prefix}base_link"/>
+  <joint name="${prefix}base_link_to_mesh_base" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="${prefix}base_link___"/>
+    <origin rpy="-1.57079632679489661923 0 0"/>
+  </joint>-->
 
   <link name="${prefix}base_link" concave="yes">
     <inertial>
       <origin
         xyz="-0.080585 0.00067592 0.086754"
-        rpy="0 0 0" />
+        rpy="-1.57079632679489661923 0 0" />
       <mass
         value="30.385" />
       <inertia
@@ -48,7 +55,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="-1.57079632679489661923 0 0" />
       <geometry>
         <mesh
           filename="package://kr_50_r2500_description/meshes/base_link.STL" />
@@ -62,7 +69,7 @@
     <collision concave="yes">
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="-1.57079632679489661923 0 0" />
       <geometry>
         <mesh
           filename="package://kr_50_r2500_description/meshes/base_link.STL" />
@@ -111,9 +118,7 @@
   </link>
   <joint name="${prefix}joint1"
     type="revolute">
-    <origin
-      xyz="0 -0.17 0"
-      rpy="1.5708 0.009141 0" />
+    <origin      xyz="0 0 0.17"       rpy="0 0.0 0" />
     <parent
       link="${prefix}base_link" />
     <child
@@ -165,7 +170,7 @@
     type="revolute">
     <origin
       xyz="0.175 -0.074807 0.405"
-      rpy="0 1.557055  0" />
+      rpy="0 1.57079632679489661923  0" />
     <parent
       link="${prefix}link1" />
     <child
@@ -217,7 +222,7 @@
     type="revolute">
     <origin
       xyz="0 0 1.29"
-      rpy="0 -1.557055 0" />
+      rpy="0 -1.57079632679489661923 0" />
     <parent
       link="${prefix}link2" />
     <child
@@ -321,7 +326,7 @@
     type="revolute">
     <origin
       xyz="0.708131634616243 0 0"
-      rpy="0 -0.0 0" />
+      rpy="0 0 0" />
     <parent
       link="${prefix}link4" />
     <child
@@ -386,7 +391,7 @@
   <joint name="${prefix}link6_to_flange" type="fixed">
       <origin
         xyz="0.07 0 0"
-        rpy="0 1.57079632679 0" />
+        rpy="0 1.57079632679489661923 0" />
       <parent link="${prefix}link6"/>
       <child link="${prefix}flange"/>
   </joint>
