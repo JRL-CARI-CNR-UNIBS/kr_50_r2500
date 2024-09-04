@@ -30,6 +30,13 @@
   <xacro:property name="joint6_eff_limit" value="10000" />
 
 
+  <link name="${prefix}iksolver_base_link"/>
+  <joint name="${prefix}base_to_base_link" type="fixed">
+    <parent link="${prefix}iksolver_base_link"/>
+    <child link="${prefix}base_link"/>
+    <origin rpy="-1.57079632679489661923 0 0"/>
+  </joint>
+
   <link name="${prefix}base_link" concave="yes">
     <inertial>
       <origin
