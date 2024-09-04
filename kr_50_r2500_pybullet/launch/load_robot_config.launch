@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <arg name="prefix" default=""/>
-  <arg name="robot_name" default="kr_50_r2500"/>
-
-  <rosparam command="load" file="$(find kr_50_r2500_pybullet)/config/kr_50_r2500_params.yaml" subst_value="true"/>
-</launch>

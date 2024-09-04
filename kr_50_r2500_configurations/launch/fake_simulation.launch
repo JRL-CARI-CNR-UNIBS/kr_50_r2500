@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-  <include file="$(find kr_50_r2500_configurations)/launch/simulation.launch">
-    <arg name="fake" value="true"/>
-  </include>
-
-</launch>

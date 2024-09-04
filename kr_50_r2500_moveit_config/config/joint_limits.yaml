@@ -8,38 +8,33 @@ default_acceleration_scaling_factor: 0.1
 # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
-  kr_joint1:
+  joint1:
     has_velocity_limits: true
-    max_velocity: 3.05433
-    has_acceleration_limits: false
-    max_acceleration: 0
-  kr_joint2:
+    max_velocity: 1.0 # 3.0543300000000002
+    has_acceleration_limits: true
+    max_acceleration: 3.0
+  joint2:
     has_velocity_limits: true
-    max_velocity: 2.75762
-    has_acceleration_limits: false
-    max_acceleration: 0
-  kr_joint3:
+    max_velocity: 1.0 # 2.7576200000000002
+    has_acceleration_limits: true
+    max_acceleration: 3.0
+  joint3:
     has_velocity_limits: true
-    max_velocity: 3.05433
-    has_acceleration_limits: false
-    max_acceleration: 0
-  kr_joint4:
+    max_velocity: 1.0 # 3.0543300000000002
+    has_acceleration_limits: true
+    max_acceleration: 3.0
+  joint4:
     has_velocity_limits: true
-    max_velocity: 4.36332
-    has_acceleration_limits: false
-    max_acceleration: 0
-  kr_joint5:
+    max_velocity: 1.0 # 4.3633199999999999
+    has_acceleration_limits: true
+    max_acceleration: 3.0
+  joint5:
     has_velocity_limits: true
-    max_velocity: 4.36332
-    has_acceleration_limits: false
-    max_acceleration: 0
-  kr_joint6:
+    max_velocity: 1.0 # 4.3633199999999999
+    has_acceleration_limits: true
+    max_acceleration: 3.0
+  joint6:
     has_velocity_limits: true
-    max_velocity: 6.28319
-    has_acceleration_limits: false
-    max_acceleration: 0
-  structure_joint_1:
-    has_velocity_limits: true
-    max_velocity: 1.74533
-    has_acceleration_limits: false
-    max_acceleration: 0
+    max_velocity: 1.0 # 6.2831900000000003
+    has_acceleration_limits: true
+    max_acceleration: 3.0
